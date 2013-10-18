@@ -1,0 +1,57 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com" >
+
+    <PreferenceCategory android:title="@string/settings_section_details" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="PREF_KEY_ENABLED"
+            android:summaryOff="@string/settings_enabled_off"
+            android:summaryOn="@string/settings_enabled_on"
+            android:title="@string/settings_enabled" />
+        <CheckBoxPreference
+            android:defaultValue="@string/settings_mode_default"
+            android:key="PREF_KEY_MODE"
+            android:summaryOff="@string/settings_mode_off"
+            android:summaryOn="@string/settings_mode_on"
+            android:title="@string/settings_mode" />
+
+        <com.robobunny.SeekBarPreference
+            android:defaultValue="3"
+            android:key="PREF_KEY_STEP"
+            android:max="30"
+            android:summary="@string/settings_step_desc"
+            android:title="@string/settings_step"
+            robobunny:min="0"
+            robobunny:unitsLeft=""
+            robobunny:unitsRight="%" />
+        <com.robobunny.SeekBarPreference
+            android:defaultValue="5"
+            android:key="PREF_KEY_THREASHOLD_BRIGHTNESS_VALUE"
+            android:max="100"
+            android:summary="@string/settings_threashold_desc"
+            android:title="@string/settings_threashold"
+            robobunny:min="0"
+            robobunny:unitsLeft=""
+            robobunny:unitsRight="%" />
+
+        <ListPreference
+            android:defaultValue="@string/settings_freq_default"
+            android:entries="@array/freqs_labels"
+            android:entryValues="@array/freqs"
+            android:key="PREF_KEY_FREQ"
+            android:title="@string/settings_freq" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_section_about" >
+        <Preference
+            android:key="pref_version"
+            android:maxLines="1"
+            android:singleLine="true" />
+        <Preference
+            android:enabled="true"
+            android:key="pref_feedback"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:title="@string/settings_about_feedback" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
